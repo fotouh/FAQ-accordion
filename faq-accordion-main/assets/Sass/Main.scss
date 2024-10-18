@@ -1,0 +1,96 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+$Maincolor: hsl(292, 16%, 49%);
+$Dark: hsl(292, 42%, 14%);
+h1,
+h2 {
+  font-size: 22px;
+}
+h2:not(:last-child) {
+  border-bottom: 1px solid hsl(275, 100%, 97%);
+}
+h2 div p {
+  font-size: 30px;
+  line-height: 2.5rem;
+}
+@font-face {
+  font-family: "MyFont";
+  src: url("../fonts/WorkSans-VariableFont_wght.ttf");
+}
+body {
+  font-family: "MyFont";
+  display: grid;
+  place-items: center;
+  background: $Maincolor url(../images/background-pattern-desktop.svg) top;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 100vw;
+  height: 100vh;
+}
+main {
+  width: 50%;
+  background: white;
+  & header {
+    margin: 1rem 2rem;
+    & div {
+      display: flex;
+      justify-content: space-between;
+      & ~ p {
+        display: none;
+      }
+      & ~ p.show {
+        display: block;
+      }
+    }
+  }
+}
+
+.Quiz {
+  margin-bottom: 1rem;
+  line-height: 1.5rem;
+  & p {
+    margin: 0;
+    height: 100%;
+  }
+}
+.Quiz:hover {
+  cursor: pointer;
+  color: #ad28eb;
+}
+
+.Answer:hover {
+  color: $Maincolor;
+}
+.Answer {
+  line-height: 2rem;
+}
+@media screen and (max-width: 768px) {
+  body {
+    background: $Maincolor url(../images/background-pattern-mobile.svg)
+      no-repeat;
+    background-position-y: top;
+    background-size: contain;
+  }
+  main {
+    width: 90%;
+  }
+  h1,
+  h2 {
+    font-size: 12pxs;
+  }
+  h2 div p {
+    font-size: 15px;
+    line-height: 1.5rem;
+  }
+  .Answer {
+    font-size: 12px;
+    line-height: 1.5rem;
+  }
+  header {
+    margin: 0.5rem 1rem;
+  }
+}
